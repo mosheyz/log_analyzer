@@ -11,3 +11,7 @@ def check_sensitive_port(file):
 def check_large_file(file):
     larges = [line for line in file if int(line[5]) > 5000]
     return larges
+
+def tag_traffic_size(file):
+    tag_list = [f"LARGE {line}" if int(line[5]) > 5000 else f"NORMAL {line}" for line in file]
+    return tag_list
