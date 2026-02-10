@@ -7,3 +7,7 @@ def check_outside_ip(file):
 def check_sensitive_port(file):
     sensitive = [line for line in file if line[3] in sensitive_ports]
     return sensitive
+
+def check_large_file(file):
+    larges = [line for line in file if int(line[5]) > 5000]
+    return larges
